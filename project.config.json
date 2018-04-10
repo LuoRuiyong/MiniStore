@@ -7,10 +7,10 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"compileType": "miniprogram",
+	"compileType": "ministore",
 	"libVersion": "1.9.94",
 	"appid": "wx2776ae6279c5ceea",
-	"projectname": "MiniProgram",
+	"projectname": "MiniStore",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
