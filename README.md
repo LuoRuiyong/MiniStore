@@ -27,3 +27,6 @@
 
 搜索-有结果列表显示截图
 ![搜索-有结果列表显示截图](https://github.com/LuoRuiyong/MiniStore/blob/master/demo/%E6%90%9C%E7%B4%A2-%E5%B8%A6%E7%BB%93%E6%9E%9C2.jpg)
+
+商品详情界面显示
+![商品详情界面显示](https://github.com/LuoRuiyong/MiniStore/blob/master/demo/%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85.jpg)
