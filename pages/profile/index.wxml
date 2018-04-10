@@ -1,0 +1,66 @@
+<!--pages/profile/index.wxml-->
+<view class="container">
+  <view class='header'>
+    <view class='header-assist'></view>  
+    <view class='user-icon'>
+      <image bindtap='browseUserInfo' src='../../res/nav_icon/02.jpg'></image>
+    </view>
+    <view class='user-account'>
+      <text>PSC52193</text>
+    </view>
+  </view>
+  <view class='indent-assist'>
+    <view class='indent'>
+      <view class='info'>
+        <text class='title'>我的订单</text>
+        <view class='all-indent' bindtap='checkAllIntents'>
+          <text>全部订单</text>
+          <image src='../../res/extra_icon/enter_gray_50.png'></image>
+        </view>
+      </view>
+      <view class='indent-check'>
+        <view class='item' bindtap='checkWaitForPayIntents'>
+          <image src='../../res/extra_icon/for_pay_gray_50.png'></image>
+          <text>待付款</text>
+        </view>
+        <view class='item' bindtap='checkWaitForShipmentsIntents'>
+          <image src='../../res/extra_icon/for_delivery_gray_50.png'></image>
+          <text>待发货</text>
+        </view>
+        <view class='item' bindtap='checkWaitForTakeDeliveryIntents' >
+          <image src='../../res/extra_icon/for_good_gray_50.png'></image>
+          <text>待收货</text>
+        </view>
+        <view class='item' bindtap='checkAfterSalesIntents'>
+          <image src='../../res/extra_icon/after_sale_gray_50.png'></image>
+          <text>售后</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='other-assist'>
+    <view class='other'>
+      <view class='item' bindtap='manageAddress' hover-class='tap-effect' hover-stay-time='100'>
+        <view class='title'>收货地址</view>
+        <image src='../../res/extra_icon/enter_gray_50.png'></image>
+      </view>
+      <view class='item' bindtap='browseCart' hover-class='tap-effect' hover-stay-time='100'>
+        <view class='title'>购物车</view>
+        <image src='../../res/extra_icon/enter_gray_50.png'></image>
+      </view>
+      <view class='item' bindtap='contactToAgent' hover-class='tap-effect' hover-stay-time='100'>
+        <view class='title'>联系客服</view>
+        <image src='../../res/extra_icon/enter_gray_50.png'></image>
+      </view>
+      <view class='item' bindtap='feedbackOptions' hover-class='tap-effect' hover-stay-time='100'>
+        <view class='title'>意见反馈</view>
+        <image src='../../res/extra_icon/enter_gray_50.png'></image>
+      </view>
+    </view>
+  </view>
+  
+  <view class='logout-assist'>
+    <button class='logout' type='warn' bindtap='logout'>退出登录</button>
+  </view>
+  
+</view>

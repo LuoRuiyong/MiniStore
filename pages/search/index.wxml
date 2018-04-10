@@ -1,0 +1,72 @@
+<!--pages/search/index.wxml-->
+<import src='../../templates/template.wxml'/>
+<import src='./template.wxml'/>
+
+<scroll-view>
+  <view class='container'>
+    <view class='header'>
+      <view class='search-bar'>
+        <image src='../../res/extra_icon/search_gray_50.png'></image>
+        <input placeholder='搜索您喜欢的商品' confirm-type='search' auto-focus bindconfirm='search' bindinput='onTextChanged' value='{{value}}'></input>
+        <image hidden="{{value == ''}}" src='../../res/extra_icon/delete_gray_50.png' bindtap='clearInputBar'></image>
+      </view>
+      <view class='browse-mode' bindtap='onBrowseModeTap'>
+        <image src="{{(browseMode == 0 || browseMode == undefined) ? '../../res/extra_icon/list_mode_light_blue_50.png' : '../../res/extra_icon/table_mode_light_blue_50.png'}}"></image>
+      </view>
+    </view>
+    <view class='main'>
+      <!-- 搜索提示内容 -->
+      <view class='tip' wx:if='{{showSearchTips}}'>
+        <!-- 热搜  -->
+        <view class='hot-search'>
+          <view class='hot-search-header'>
+            <text class='tip-label'>大家都在搜</text>
+            <text class='change-button' bindtap='changeHotSearchWord'>换一组</text>
+          </view>
+          <view class='hot-words'>
+            <block wx:for='{{hotSearchWords}}' wx:key='{{item.index}}'>
+              <text>{{item}}</text>
+            </block>
+          </view>
+        </view>
+        <!-- 历史记录 -->
+        <view class='history-search'>
+          <view class='history-search-header'>
+            <text class='tip-label'>历史记录</text>
+            <block wx:if='{{historySearchWords != null}}'>
+              <image class='remove' src='../../res/extra_icon/remove_gray_50.png' bindtap='removeHistory'></image>
+            </block>
+          </view>
+          <view class='history-words'  wx:if='{{historySearchWords != null}}'>
+            <block wx:for='{{historySearchWords}}' wx:key='{{item.index}}'>
+              <text>{{item}}</text>
+            </block>
+          </view>
+          <view class='no-history-tip'  wx:if='{{historySearchWords == null}}'>
+            <text>暂无历史记录~</text>
+          </view>
+        </view>
+      </view>
+      <view wx:else class='result-area'>
+        <block wx:if='{{result != null}}'> 
+          <view class='condition' >
+            <template is='filter-condition-layout' data='{{conditionMode: conditionMode}}'/>  
+          </view>
+          <scroll-view class='products' scroll-y scroll-top='{{scrollTop}}' scroll-with-animation  bindscroll='onPageScroll'>
+            <template is="{{browseMode == 0 ? 'table-exhibition' : 'list-exhibition'}}" data='{{products:result}}' />
+            <view class='footer'>
+              <template is='footer'/> 
+            </view>   
+          </scroll-view>
+        </block>
+        <block wx:else> 
+          <template is='no-result-layout'/>
+        </block>
+      </view>
+      
+    </view>
+    <template wx:if='{{result != null}}' is='to-top' data='{{hidden: hideToTopButton}}'/>
+    <template wx:if='{{result != null}}' is='cart' />
+  </view>
+</scroll-view>
+

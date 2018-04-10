@@ -1,0 +1,26 @@
+<!-- 筛选条件模板 -->
+<template name='filter-condition-layout'>
+  <view class='filter-condition' hidden='{{hidden}}'>
+    <view class="{{conditionMode == 0 ? 'item selected' : 'item'}}">
+      <text data-index='0' bindtap='onConditionBarTap'>综合</text>
+    </view>
+    <view class="{{conditionMode == 1 ? 'item selected' : 'item'}}">
+      <text data-index='1' bindtap='onConditionBarTap'>销量</text>
+    </view>
+    <view class="{{conditionMode == 2 || conditionMode == 3 ? 'item selected' : 'item'}}">
+      <view class='price'>
+        <view class='title'>
+          <text  data-index='2' bindtap='onConditionBarTap'>价格</text>
+        </view>
+        <view class='choose'>
+          <view class='up'>
+            <image src="{{conditionMode == 2 ? '../../res/extra_icon/up_red_50.png' : '../../res/extra_icon/up_gray_50.png'}}"></image>
+          </view>
+          <view class='down'>
+            <image src="{{conditionMode == 3 ? '../../res/extra_icon/down_red_50.png' : '../../res/extra_icon/down_gray_50.png'}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

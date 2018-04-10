@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<!-- 引入公共模板 -->
+<import src='../../templates/template.wxml' />
+<!-- 引用私有模板 -->
+<import src='./template.wxml' />
+
+<scroll-view>
+<scroll-view class="container" scroll-y bindscroll='onScroll' scroll-top='{{scrollTop}}' scroll-with-animation>
+  <!-- 推荐区（轮播图） -->
+  <swiper class='carousel' autoplay='{{autoPlay}}' indicator-dots interval='3000' indicator-active-color='#ffffff' indicator-color='#bbbbbb' circular>
+    <block wx:for='{{carouselDatas}}' wx:key='{{item.index}}'>
+      <swiper-item bindtap='onSwiperItemTap' data-index='{{index}}'>
+        <image src='{{item.url}}'> </image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 顶部导航区（配送区域显示，搜索功能区） -->
+  <view class='navigationbar'>
+    <view class='location' bindtap='onLocationBarTag'>
+      <image class='inner-icon' src='../../res/extra_icon/location_gray_50.png'></image>
+      <text>悦龙华府</text>
+      <image class='up-down-inner-icon' src='../../res/extra_icon/down_gray_50.png'></image>
+    </view>
+    <view class='search' bindtap='onSearchBarTap'>
+      <image class='inner-icon' src='../../res/extra_icon/search_gray_50.png'></image>
+      <text>搜索商品</text>
+    </view>
+  </view>
+
+  <!-- 快捷通道区 -->
+ <template is='fast-channel' data='{{fastChannelDatas:fastChannelDatas}}' />
+
+  <!-- 子促销展示区 -->
+  <view class='introduct-area'>
+    <template is='sub-introduct-panel' data='{{subIntroductDatas:subPromotionDatas}}' />
+  </view>
+  <template is='footer' data="{{tip:'我们是有底线的 ^_^'}}"/>
+</scroll-view>
+<!-- 购物车按钮 -->
+<template is='cart'/>
+<template is='to-top' data='{{hidden:hideToTopButton}}'/>
+</scroll-view>
+

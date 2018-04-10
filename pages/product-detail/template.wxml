@@ -1,0 +1,28 @@
+
+<template name='concession-detail'>
+    <view class='concession-panel'>
+      <view class='item' wx:for='{{tags}}' wx:key='{{item.index}}'>
+        <block>
+          <text wx:if='{{item.mode == 1}}' class='discount'>折</text>
+          <text wx:elif='{{item.mode == 2}}' class='minus'>减</text>
+          <text wx:elif='{{item.mode == 3}}' class='special'>特</text>
+          <text wx:elif='{{item.mode == 4}}' class='pack'>包</text>
+          <text wx:elif='{{item.mode == 5}}' class='newer'>新</text>
+        </block>
+        <view class='explain'>{{item.detail}}</view>
+      </view>
+    </view>
+</template>
+
+
+<!-- 商品数量选择模板 -->
+<template name='quantity'>
+  <view class='quantity-layout'>
+    <view class="{{quantity != undefined && quantity > 1 ? 'minus-button' : 'minus-button button-unable-style'}}"  bindtap="{{quantity != undefined && quantity > 1 ? 'minus' : ''}}">－</view>
+    <view class='input-box'>
+      <input type='number' value='{{quantity}}' bindinput='onQuantityChanged'/>
+    </view>
+    <view class="{{inventory != undefined && quantity < inventory ? 'add-button' : 'add-button  button-unable-style'}}" bindtap="{{inventory != undefined && quantity < inventory ? 'add' : ''}}">＋</view>
+  </view>
+</template>
+

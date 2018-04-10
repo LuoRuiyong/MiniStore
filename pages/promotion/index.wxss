@@ -1,0 +1,101 @@
+/* pages/promotion/index.wxss */
+.header .picture {
+  width: 100%;
+  height: 300rpx;
+}
+
+.header image {
+  width: 100%;
+  height: 100%;
+}
+
+.header .handle-link {
+  margin-bottom: 10rpx;
+}
+
+.table-panel-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-panel-1 .item {
+  flex: 1;
+  height: 450rpx;
+  margin: 6rpx;
+  border: 1rpx #e1e1e1 solid;
+  background-color: #ffffff;  
+  border-radius: 10rpx;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.table-panel-1  .item .picture {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-panel-1  .item .picture image {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx;
+  border-radius: 30rpx;
+}
+
+.table-panel-1  .item .desc {
+  flex: 1;
+  padding: 10rpx 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-panel-1 .item .desc text {
+   font-size: 30rpx;
+   color: #444444;
+}
+
+.table-panel-1 .item .price {
+  display: flex;
+  justify-content: space-around;
+  padding: 10rpx 20rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.table-panel-1 .item  .price .original {
+  text-decoration: line-through;  
+  color: orange;
+  font-size: 30rpx;
+}
+
+.table-panel-1 .item .price .current {
+  color: red;
+  font-size: 32rpx;
+}
+
+.table-panel-1 .item .extra {
+  width: 100%;
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.table-panel-1 .item .extra .discount{
+  font-size: 26rpx;
+  padding: 2rpx 10rpx;
+  border-radius: 10rpx;
+  background-color: #f7f7f7;
+  margin-left: 16rpx; 
+  color: red;
+  border: 2rpx red solid;  
+}
+
+
+
+
+

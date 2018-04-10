@@ -1,0 +1,279 @@
+/* pages/product-detail/index.wxss */
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 商品图片 */
+.pictures {
+  width: 100%;
+  height: 600rpx;
+  background-color: orange;
+}
+
+.pictures swiper,
+.pictures swiper-item,
+.pictures image  {
+  height: 100%;
+  width: 100%;
+}
+
+/* 商品信息 */
+.info {
+  padding: 14rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 商品描述 */
+.info .desc {
+  flex: 1;
+}
+
+.info .desc text {
+  color: #555555;
+  font-size: 32rpx;
+}
+
+.info .devide-line {
+  background-color: #ccc;
+  height: 50rpx;
+  width: 2rpx;
+  margin-left: 14rpx;
+  border-radius: 1rpx;
+}
+
+/* 收藏商品 */
+.info .collect {
+  padding: 0 20rpx;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info .collect .icon {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.info .collect .icon image {
+  height: 100%;
+  width: 100%;
+}
+
+.info .label {
+  color: #999999;
+  font-size: 26rpx;
+  margin-top: 2rpx;
+}
+
+.info .collected {
+  color: #fd6700;
+}
+
+
+/* 优惠信息区 */
+.extra {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 优惠信息面板模板 */
+.concession-panel {
+  padding: 0 14rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.concession-panel .item {
+  display: flex;
+  flex-direction: row;
+  margin: 6rpx 0;
+}
+
+.concession-panel .item .discount,
+.concession-panel .item .minus,
+.concession-panel .item .special,
+.concession-panel .item .pack,
+.concession-panel .item .newer{
+  font-size: 24rpx;
+  padding: 2rpx 8rpx;
+  border-radius: 8rpx;
+  color: #ffffff;
+}
+
+.concession-panel .item .discount {
+  background-color: #f27a7a;
+}
+
+.concession-panel .item .minus,
+.concession-panel .item .newer {
+  background-color: #8ff497;
+}
+.concession-panel .item .special {
+  background-color: #facf6d;
+}
+
+.concession-panel .item .pack {
+  background-color: #94b6f6;
+}
+
+.concession-panel .item .explain {
+  color: #666666;
+  font-size: 28rpx;
+  margin-left: 14rpx;
+}
+
+/* 价格 */
+.price {
+  padding: 14rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.price .current {
+  font-size: 36rpx;
+  color: #ff0000;
+}
+
+.price .original {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  color: #777777;
+  text-decoration: line-through;
+}
+
+/* 订单数量 */
+.indent-quantity {
+  padding: 14rpx;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 选择商品数量模板 */
+.quantity-layout {
+  height: 50rpx;
+  width: 250rpx;
+  border: 2rpx solid #cccccc;
+  border-radius: 4rpx;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.quantity-layout .minus-button,
+.quantity-layout .add-button {
+  flex: 1;
+
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #333333;
+  background-color: #eeeeee;
+   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-layout .minus-button {
+  border-right: 2rpx solid #cccccc;
+}
+
+.quantity-layout .add-button {
+  border-left: 2rpx solid #cccccc;
+}
+
+.quantity-layout .input-box {
+  flex: 2;
+}
+
+.quantity-layout .input-box input {
+    text-align: center;  
+    color: #666666;
+}
+
+/* 按钮不可点击样式 */
+.quantity-layout .button-unable-style{
+  color: #bbbbbb;
+}
+
+
+/* 库存 */
+.indent-quantity .inventory {
+  color: #999999;
+  font-size: 32rpx;
+  margin-left: 30rpx;
+}
+
+/* 操作按钮 */
+.operate {
+  display: flex;
+  height: 100rpx;
+  flex-direction: row;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+.operate .add-to-cart,
+.operate .buy-now,
+.operate .browse-cart {
+  flex: 1;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  color: #ffffff;
+  text-align: center;
+}
+
+.operate .add-to-cart {
+  background-color: #00bbfd;
+}
+
+.operate .browse-cart {
+  background-color: #fab605;
+}
+
+.operate .buy-now {
+  background-color: #fd6700;
+}
+
+
+
+/* 操作按钮按下样式 */
+.operate .add-to-cart-tap-effect {
+  background-color: #00aeec;
+}
+
+.operate .browse-cart-tap-effect {
+  background-color: #ecac07;
+}
+
+.operate .buy-now-tap-effect {
+  background-color: #ed6407;
+}
+
+/* 页脚占位 */
+.footer-placeholder {
+  height: 100rpx;
+}
+
+
+
+
+
+
+
+
+
+

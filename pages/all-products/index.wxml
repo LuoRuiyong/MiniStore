@@ -1,0 +1,40 @@
+<!--pages/all-products/index.wxml-->
+<import src='../../templates/template.wxml' />
+<import src='./template.wxml'/>
+
+<view class='container'>
+  <template is='search-layout' data='{{browseMode: browseMode}}' />
+  <scroll-view scroll-x>
+    <view class='horizontal-nav'>
+      <block wx:for='{{categories}}' wx:key='{{item.index}}'>
+        <view class='item' data-index='{{index}}' bindtap='onCategoryTap'>
+          <view class='title'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='nav-line selected' wx:if='{{index == selectedPage}}'></view>
+          <view class='nav-line' wx:else></view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+ 
+  
+  <swiper class='page-card' current='{{selectedPage}}' bindchange='onPageChanged'>
+    <block wx:for='{{categories}}' wx:key='{{item.index}}'>
+      <swiper-item class="item">
+        <scroll-view class='main' scroll-y bindscroll='onPageScroll' scroll-top='{{item.scrollTop}}' scroll-with-animation>
+          <view class='header' bindtap='onHeaderTap'>
+            <image src='{{item.header.url}}'></image>
+          </view>
+          <view class='body'>
+            <template is="{{browseMode == 0 ? 'table-exhibition' : 'list-exhibition'}}" data='{{products:item.products}}' />
+          </view>
+          <template is='footer' /> 
+        </scroll-view>
+      </swiper-item>
+    </block>
+    
+  </swiper> 
+      <template is='to-top' data='{{hidden: hideToTopButton}}'/>
+  <template is='cart'/>
+</view>

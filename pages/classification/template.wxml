@@ -1,0 +1,97 @@
+
+<!-- 
+表格展示模板
+#############################################
+#                                           #
+#           图片              图片           #
+#                                           #
+#           描述              描述           #
+#           价格              价格           #
+#                                           #
+#############################################
+数据要求
+  products: [
+    [
+      {
+        点击跳转页面路由 page
+        网络请求路径 link
+        商品描述 desc
+        商品图片资源路径url
+        价格 price
+      },
+      ...(不限数量，最后在3个以内)
+    ],
+    ...(不限数量)
+  ]
+事件要求
+  onProductTap 点击某一产品事件
+    事件源会携带两个索引号
+    var i = event.currentTarget.dataset.firstIndex
+    var j = event.currentTarget.dataset.secondIndex
+    通过products[i][j]可获取点击商品的具体信息
+
+-->
+<template name='table-exhibition'>
+  <block wx:for='{{products}}' wx:for-index='index1' wx:key='{{item.index}} '>   
+    <!-- 每一行商品的内容区域 -->
+    <view class='sub-table-panel'>
+      <!-- 每一个商品的内容展现区域 -->
+      <view class='item' wx:for='{{item}}' wx:for-index='index2' wx:key='{{item.index}}' data-first-index='{{index1}}' data-second-index='{{index2}}' bindtap='onProductTap'>
+      <view class='picture'>
+        <image src='{{item.url}}'></image>
+      </view>
+      <view class='desc'>
+        <text>{{item.desc}}</text>
+      </view>
+      <text class='price' wx:if='{{item != null}}'>￥{{item.price}}</text>
+      </view>
+    </view>
+  </block>
+</template>
+
+<!--
+列表展示模板
+#############################################
+#                                           #
+#         图                                #
+#                   描述                    #
+#                                           #
+#         片        价格                    #
+#                                           #
+#############################################
+
+数据要求
+  products: [
+    {
+      点击跳转页面路由 page
+      网络请求路径 link
+      商品描述 desc
+      商品图片资源路径url
+      价格 price
+    },
+    ...(不限数量)
+  ]
+
+事件要求
+  onProductTap 点击某一产品事件
+    事件源会携带一个索引号
+    var i = event.currentTarget.dataset.index
+    通过products[i]可获取点击商品的具体信息
+
+-->
+
+<template name='list-exhibition'>
+  <view class='sub-list-panel'>
+    <block wx:for='{{products}}' wx:key='{{item.index}}'>
+      <view class='item' wx:if='{{item != null}}' data-index='{{index}}' bindtap='onProductTap'>
+        <view class='picture'>
+          <image src='{{item.url}}'></image>
+        </view>
+        <view class='info'>
+          <text class='desc'>{{item.desc}}</text>
+          <text class='price'>￥{{item.price}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

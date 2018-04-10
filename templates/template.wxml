@@ -1,0 +1,201 @@
+<!-- 
+购物车模板
+  ######
+ #       #
+#   图标  #
+ #       #
+  ######
+
+事件要求 
+  onCartTap 购物车按钮点击事件
+  默认处理： 同目录下common.js中 cartButton.onCartTap()
+ -->
+<template name='cart'>
+  <view class='cart-button' bindtap='onCartTap'>
+    <view class='main'>
+      <view class='picture'>
+        <image src='../../res/extra_icon/cart_90.png'></image>
+      </view>
+      <view class='notice'>
+        <text>2</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 
+回到顶部模板
+  ######
+ #       #
+#   图标  #
+ #       #
+  ######
+
+数据要求
+  hidden 布尔类型，ture表示显示，false表示隐藏，默认显示
+
+事件要求 
+  goToTop 回到顶部按钮点击事件
+  默认处理： 同目录下common.js中 toTopButton.goToTop()
+ -->
+<template name='to-top'>
+   <view class='to-top-button' bindtap='goToTop' hidden='{{hidden}}'>
+    <image src='../../res/extra_icon/to_top_90.png'></image>
+  </view>
+</template>
+
+<!-- 
+头部搜索栏模板
+#######################################
+#                                     #
+# 小图标  搜索您喜欢的商品      浏览模式 #
+#                                     #
+#######################################
+
+数据要求
+  palceholder 搜索栏提示占位符
+  browseMode 浏览模式，默认为表格
+
+事件要求
+  onSearchLayoutTap 搜索栏点击事件
+  默认处理： 同目录下common.js中 searchLayout.onSearchLayoutTap()
+-->
+<template name='search-layout'>
+  <view class='search-layout'>
+    <view class='search-bar' bindtap='onSearchLayoutTap'>
+      <image src='../../res/extra_icon/search_gray_50.png'></image>
+      <text wx:if='{{placeholder == null || palceholder == ""}}'>搜索您喜欢的商品</text>
+      <text wx:else>{{placeholder}}</text>
+    </view>
+    <view class='browse-mode' bindtap='onBrowseModeTap'>
+      <image src="{{(browseMode == 0 || browseMode == undefined) ? '../../res/extra_icon/list_mode_gray_50.png' : '../../res/extra_icon/table_mode_gray_50.png'}}"></image>
+    </view>
+  </view>
+
+  
+</template>
+
+<!-- 
+页脚模板 
+###################################
+#                                 #
+#          没有更多数据了~         #
+#                                 #
+###################################
+
+数据要求：
+1.hidden 接收布尔值，ture表示显示，false表示隐藏，默认显示
+2.tip 接受字符串，如果不为空（未定义|空字符串），则替换原本的提示语句
+-->
+<template name='footer'>
+  <view class='footer'  hidden='{{hidden}}'>
+    <text wx:if='{{tip == null || tip == ""}}'>没有更多数据了~</text>
+    <text wx:else>{{tip}}</text>
+  </view>
+</template>
+
+<!-- 
+快速通道模板
+#############################################
+#                                           #
+#   通道图标   通道图标   通道图标  通道图标   #
+#    标题       标题       标题      标题    #
+#                                           #
+#############################################
+
+数据要求： 
+  fastChannelDatas = [
+    {
+      点击跳转页面路由 page
+      网络请求路径 link
+      图片资源路径 url
+      通道标题 title
+    },
+    ...（5个以内，超过可能会造成拥挤布局）
+  ]
+
+事件要求：
+  onFastChannelTap 通道点击事件
+  通过event.currentTarget.dataset.index获取点击的通道索引号
+-->
+<template name='fast-channel'>
+  <view class='handle-link'>
+    <block wx:for='{{fastChannelDatas}}' wx:key='{{item.index}}'>
+        <view class='item' data-index='{{index}}' bindtap='onFastChannelTap'>
+          <image src='{{item.url}}'></image>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+</template>
+
+
+
+<!-- 表格形式显示商品模板 -->
+<template name='table-exhibition'>
+  <view class='table-panel' wx:for='{{products}}' wx:for-index='index1' wx:key='{{item.index}}'>
+    <!-- 包含每一个产品的所有显示内容 -->
+    <block wx:for='{{item}}' wx:for-index='index2' wx:key='{{item.index}}'>
+      <view class='item' wx:if='{{item != null}}'  data-first-index='{{index1}}' data-second-index='{{index2}}' bindtap='onProductTap'>
+        <!-- 产品图片 -->
+        <view class='picture'>
+          <image src='{{item.url}}'></image>
+        </view>
+        <!-- 产品描述 -->
+        <view class='desc'><text>{{item.desc}}</text></view>
+        <!-- 产品现价 -->
+        <view class='info'>
+          <view class='price'><text>￥{{item.price}}</text></view>
+          <template is='concession' data='{{tags: item.tags}}' />
+        </view>
+      </view>
+      <view wx:else class='item-placeholder'></view>
+    </block>
+  </view>
+</template>
+
+<template name='list-exhibition'>
+  <view class='list-panel'>
+    <!-- 包含每一个产品的所有显示内容 -->
+    <block wx:for='{{products}}' wx:key='{{item.index}}'>
+      <view wx:if='{{item != null}}' class='item' data-index='{{index}}' bindtap='onProductTap'>
+        <!-- 产品图片 -->
+        <view class='picture'>
+          <image src='{{item.url}}'></image>
+        </view>
+        <!-- 产品信息 -->
+        <view class='info'>
+        <!-- 产品描述 -->
+          <view class='desc'><text>{{item.desc}}</text></view>
+          <view class='price'><text>￥{{item.price}}</text></view>
+          <template is='concession' data='{{tags: item.tags}}' />
+        </view>
+      </view>
+    </block>
+  </view>
+</template>
+
+<!-- 优惠提示区 -->
+<template name='concession'>
+  <view class='concession'>
+    <block wx:for='{{tags}}' wx:key='{{item.index}}'>
+      <text wx:if='{{item == 1}}' class='discount'>折</text>
+      <text wx:elif='{{item == 2}}' class='minus'>减</text>
+      <text wx:elif='{{item == 3}}' class='special'>特</text>
+      <text wx:elif='{{item == 4}}' class='pack'>包</text>
+      <text wx:elif='{{item == 5}}' class='newer'>新</text>
+    </block>
+  </view> 
+</template>
+
+<!-- 无数据提示 -->
+<template name='no-result-layout'>
+  <view class='no-result-layout' bindtap='refresh'>
+    <view class='picture'>
+      <image src='../../res/extra_icon/no_result_gray_325.png'></image>
+    </view>
+    <view class='tip'>
+      <text>{{tip == undefined ? '抱歉，暂无相关商品~' : tip}}</text>
+    </view>
+  </view>
+</template>

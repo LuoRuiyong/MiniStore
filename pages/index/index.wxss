@@ -1,0 +1,171 @@
+/**index.wxss**/
+.carousel {
+  width: 100%;
+  height: 380rpx;
+  background-color: #44A3DB;
+}
+
+.carousel image {
+  width: 100%;
+  height: 100%;
+}
+
+.navigationbar {
+  width: 100%;
+  padding: 10rpx;
+  margin: 10rpx 0rpx;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  direction: row;
+  left: 0;
+  top: 0;
+}
+
+.navigationbar .location,
+.navigationbar .search {
+  height: 60rpx;
+  border-radius:60rpx;
+  background: #E7FAFE;
+  margin: 0 10rpx;
+  padding: 0 16rpx;
+  display: flex;
+  direction: column;
+  align-items: center;
+  opacity: 0.8
+}
+
+.navigationbar .location {
+  flex: 2;
+}
+
+.navigationbar .search {
+  flex: 3;
+}
+
+.navigationbar text{
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #444444;
+  flex: 1;
+  margin: 0 10rpx;
+}
+
+.navigationbar .search text {
+  color: #999999;
+}
+
+.handle-link .item image {
+  border-radius: 30%;
+}
+
+.inner-icon {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.up-down-inner-icon {
+ width: 26rpx;
+  height: 26rpx;
+}
+
+.introduct-area .panel {
+  background-color: #ffffff;
+  margin-top: 16rpx; 
+  border-top-right-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+  padding: 16rpx;
+}
+
+.introduct-area .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  clear: both;
+}
+
+.introduct-area .title text {
+  flex: 3;
+  font-size: 40rpx;
+  color: #e8b034;
+  text-align: center;
+  margin: 0 20rpx;
+}
+
+.introduct-area .title .placeholder,
+.introduct-area .title .enter {
+  flex: 1;
+}
+
+.introduct-area .title .enter {
+  display: flex;
+  flex-direction: row-reverse; 
+  padding-right: 20rpx;
+  align-items: center;
+}
+
+.introduct-area .title .enter image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.introduct-area .title image {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  opacity: 0.7
+}
+
+.introduct-area .sub-panel {
+  width: 100%;
+  height: 360rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.introduct-area .panel .item {
+  flex: 1;
+  margin: 10rpx;
+  background-color: #E7FAFE;
+  border-radius: 20rpx;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introduct-area .panel .item image {
+  height: 200rpx;
+  width: 100%;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.introduct-area .panel .item .desc {
+  flex: 1;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introduct-area .panel .item .desc text{
+  font-size: 28rpx;
+  color: #444444;
+}
+
+.introduct-area .panel .item .price{
+  color: orange;
+  font-size: 28rpx;
+  margin: 10rpx;
+}
+
+
+
+
+

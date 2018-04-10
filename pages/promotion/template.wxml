@@ -1,0 +1,26 @@
+ 
+  
+  
+<template name='products-show'>
+  <view class='table-panel-1 ' wx:for='{{products}}' wx:for-index='index1' wx:key='{{item.index}}'>
+    <!-- 包含每一个产品的所有显示内容 -->
+    <view class='item' wx:for='{{item}}' wx:for-index='index2' wx:key='{{item.index}}' data-first-index='{{index1}}' data-second-index='{{index2}}' bindtap='onProductTap'>
+      <!-- 产品图片 -->
+      <view class='picture'>
+        <image src='{{item.url}}'></image>
+      </view>
+      <!-- 产品描述及原价、现价 -->
+      <view class='desc'><text>{{item.desc}}</text></view>
+      <view class='price'>
+        <view class='original' wx:if='{{item.price != null}}'><text>￥{{item.price}}</text></view>
+        <view class='current' wx:if='{{item.current != null}}'><text>￥{{item.current}}</text></view>
+      </view>
+      <!-- 额外信息，如优惠说明、剩余时间、库存 -->
+      <view class='extra'>
+        <block wx:for='{{item.tags}}' wx:key='{{item.index}}'>
+          <text class='discount'>{{item}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

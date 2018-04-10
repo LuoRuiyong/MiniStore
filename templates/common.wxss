@@ -1,0 +1,370 @@
+/* 回到顶部浮动按钮样式 */
+.to-top-button {
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  right: 40rpx;
+  border-radius: 50%;
+  bottom: 180rpx;
+  background-color: #44A3DB;  
+  opacity: 0.8;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.to-top-button image {
+  width: 50%;
+  height: 50%;
+}
+
+/* 购物车浮动按钮样式 */
+.cart-button {
+  position: absolute;
+  right: 40rpx;
+  bottom: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.cart-button .main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #44A3DB;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.cart-button .main .picture {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-button .main .picture image {
+  width: 50%;
+  height: 50%;
+}
+
+.cart-button .main  .notice {
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  right: 0;
+  background-color: red;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-button .main .notice text {
+  color: #ffffff;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+/* 页脚样式 */
+.footer {
+  display: block;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999999;
+  background-color: #f2f2f2;
+}
+
+/* 快速链接样式 */
+.handle-link {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx 0;
+  background-color: #ffffff;
+}
+
+.handle-link .item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+.handle-link .item image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.handle-link .item text {
+  width: 100%;
+  display: block;
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+/* 顶部搜索栏样式 */
+.search-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14rpx 20rpx;
+  margin:8rpx 0rpx;
+  background-color: #ffffff;
+}
+
+.search-bar {
+  height: 70rpx;
+  border-radius: 35rpx;
+  padding: 0 20rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #E7FAFE;
+}
+
+.search-bar image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+
+.search-bar text {
+  color: #999999;
+  font-size: 28rpx;
+  margin-left: 10rpx
+}
+
+.browse-mode {
+  height: 60rpx;
+  width: 60rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.browse-mode image {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+
+/*表格形式展示  */
+.table-panel {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.table-panel .item,
+.table-panel .item-placeholder {
+  flex: 1;
+  height: 550rpx;
+  margin: 6rpx;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.table-panel .item {
+  border: 1rpx #e1e1e1 solid;
+  background-color: #ffffff;  
+  border-radius: 10rpx;
+}
+
+.table-panel .item .picture {
+  width: 100%;
+  height: 380rpx;
+}
+
+.table-panel .item .picture image {
+  width: 100%;
+  height: 100%;
+}
+
+.table-panel .item .desc {
+  flex: 1;
+  padding: 5rpx 10rpx;
+
+  display: flex;
+  align-items: center;
+}
+
+.table-panel .item .desc text {
+   font-size: 32rpx;
+   color: #444444;
+}
+
+.table-panel .item .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.table-panel .item .info .price {
+  color: red;
+  font-size: 28rpx;
+}
+
+.table-panel .item .info .price text {
+  font-size: 34rpx;
+}
+
+
+.table-panel .item .extra {
+  flex: 1;
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+/*列表形式展示  */
+.list-panel {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-panel .item {
+  width: 100%;
+  height: 220rpx;
+  margin-top: 6rpx;
+  background-color: #ffffff;  
+  
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.list-panel .item .picture {
+  width: 220rpx;
+  height: 100%;
+}
+
+.list-panel .item .picture image {
+  width: 100%;
+  height: 100%;
+}
+
+.list-panel .info {
+  flex: 1;
+  height: 86%;
+  padding: 0 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-panel .item .desc {
+  flex: 1;
+  padding: 5rpx 10rpx;
+
+  display: flex;
+  align-items: center;
+}
+
+.list-panel .item .desc text {
+   font-size: 32rpx;
+   color: #444444;
+}
+
+.list-panel .item .info .price {
+  color: red;
+  font-size: 34rpx;
+  margin-bottom: 12rpx;
+}
+
+
+.list-panel .item .extra {
+  width: 100%;
+  height: 30rpx;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 优惠信息提示区 */
+.concession .discount,
+.concession .minus,
+.concession .special,
+.concession .pack,
+.concession .newer{
+  font-size: 24rpx;
+  padding: 2rpx 6rpx;
+  border-radius: 8rpx;
+  margin-left: 12rpx; 
+  color: #ffffff;
+}
+
+.concession .discount {
+  background-color: #f27a7a;
+}
+
+.concession .minus,
+.concession .newer {
+  background-color: #8ff497;
+}
+.concession .special {
+  background-color: #facf6d;
+}
+
+.concession .pack {
+  background-color: #94b6f6;
+}
+
+/* 无数据显示模板 */
+
+.no-result-layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-result-layout .picture {
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 100rpx;
+}
+
+.no-result-layout .picture image {
+  width: 100%;
+  height: 100%;
+}
+
+.no-result-layout .tip {
+  
+  padding: 10rpx;
+}
+
+.no-result-layout .tip text {
+  color: #777777;
+  font: 28rpx;
+}
+
+
+
+

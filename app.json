@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classification/index",
+    "pages/search/index",
+    "pages/test/index",
+    "pages/product-detail/index",
+    
+    "pages/promotion/index",
+    "pages/all-products/index",
+    "pages/profile/index",
+    "pages/cart/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#44A3DB",
+    "navigationBarTitleText": "强叔便利店",
+    "navigationBarTextStyle": "#ffffff",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "selectedColor": "#44A3DB",
+    "backgroundColor": "#fafafa",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./res/tab_icon/home_normal_black_81.png",
+        "selectedIconPath": "./res/tab_icon/home_selected_81.png"
+      },
+      {
+        "pagePath": "pages/classification/index",
+        "text": "分类",
+        "iconPath": "./res/tab_icon/classification_normal_81.png",
+        "selectedIconPath": "./res/tab_icon/classification_selected_81.png"
+      },
+      {
+        "pagePath": "pages/promotion/index",
+        "text": "活动",
+        "iconPath": "./res/tab_icon/promotion_normal_81.png",
+        "selectedIconPath": "./res/tab_icon/promotion_selected_81.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "./res/tab_icon/profile_normal_81.png",
+        "selectedIconPath": "./res/tab_icon/profile_selected_81.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "debug": true
+}

@@ -1,0 +1,51 @@
+<!--pages/test/index.wxml-->
+<scroll-view class='test-container'>
+  <view class='a'>
+    <text class='a-1'>测试</text>
+  </view>
+  <view class='b'>
+    <view class='b-1'></view>
+    <view class='b-2'>
+    <scroll-view scroll-y>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11111</text>
+      <text>11118</text>
+
+      <text>111176</text>
+      <text>11114</text>
+
+      <text>11113</text>
+      <text>5gestrjytger</text>
+
+    </scroll-view>
+    </view>
+  </view>
+</scroll-view>
+

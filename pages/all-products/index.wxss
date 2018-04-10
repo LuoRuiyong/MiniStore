@@ -1,0 +1,83 @@
+/* pages/all-products/index.wxss */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 水平导航栏 */
+.horizontal-nav {
+  width: max-content;
+  padding: 0 10rpx;
+  height: 80rpx;
+  background-color: #ffffff;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.horizontal-nav .item {
+  min-width: max-content;
+  height: 100%;
+  margin: 0 20rpx;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.horizontal-nav .item .title {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal-nav .item .title text {
+  font-size: 32rpx;
+  color: #444444;
+}
+
+.horizontal-nav .item .nav-line {
+  height: 8rpx;
+  width: 120%;
+  content: "";
+}
+
+.horizontal-nav .item .selected {
+  background-color: #44A3DB;
+}
+
+/* 分页 */
+.page-card {
+  flex: 1;
+}
+
+/*主体 */
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+/* 主体头 */
+.main .header {
+  width: 100%;
+  height: 360rpx;
+}
+
+.main .header image {
+  width: 100%;
+  height: 100%
+}
+
+.footer-placeholder {
+  height: 90rpx;
+}
+
+
+
+

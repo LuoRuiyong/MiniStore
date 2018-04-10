@@ -1,0 +1,47 @@
+<!--pages/product-detail/index.wxml-->
+<import src='./template.wxml'/>
+
+<view class='container'>
+  <view class='pictures'>
+    <swiper indicator-dots indicator-active-color='#ffffff' indicator-color='#bbbbbb' circular>
+      <swiper-item wx:for='{{product.pictures}}' wx:key='{{item.index}}'>
+        <image src='{{item}}'/>
+      </swiper-item>
+    </swiper> 
+  </view>
+  <view class='info'>
+    <view class='desc'>
+      <text>{{product.desc}}</text>
+    </view>
+    <view class='devide-line'></view>
+    <view class='collect' bindtap='changeCollectState'>
+      <view class='icon'>
+        <image src="{{product.hasCollected ? '../../res/extra_icon/collect_orange_90.png' : '../../res/extra_icon/collect_gray_90.png'}}"></image>
+      </view>
+      <view class="{{product.hasCollected ? 'label collected' : 'label'}}">收藏</view>
+    </view>
+  </view>
+  <view class='extra'>
+    <template is='concession-detail' data='{{tags: product.tags}}'/>
+  </view>
+  <view class='price'>
+    <view class='current'>￥{{product.currentPrice}}</view>
+    <view class='original'>￥{{product.originalPrice}}</view>
+  </view>
+  <view class='indent-quantity'>
+    <template is='quantity' data='{{quantity: quantity, inventory: product.inventory}}'/>
+    <view class='inventory'>库存:{{product.inventory}}</view>
+  </view>
+  <view class='footer-placeholder'></view>
+</view>
+<view class='operate'>
+  <view class='add-to-cart' hover-class='add-to-cart-tap-effect'  hover-stay-time='100' bindtap='addProductToCart'>
+    <text>加入购物车</text>
+  </view>
+  <view class='browse-cart' hover-class='browse-cart-tap-effect'  hover-stay-time='100' bindtap='browseCart'>
+    <text>查看购物车</text>
+  </view>
+  <view class='buy-now' hover-class='buy-now-tap-effect'  hover-stay-time='100' bindtap='buyProduct'>
+    <text>立即购买</text>
+  </view>
+</view>
